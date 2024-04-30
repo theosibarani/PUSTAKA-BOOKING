@@ -1,41 +1,25 @@
 <?php
+class Latihan1 extends CI_Controller
+{
+ public function index()
+ {
+ echo "Selamat Datang.. selamat belajar Web Programming";
+ //$this->load->view('view-latihan1');
+ }
+//  public function penjumlahan($n1, $n2)
+//  {
+//  $this->load->model('ModelLatihan1');
+//  $hasil = $this->ModelLatihan1->jumlah($n1, $n2);
+//  echo "Hasil Penjumlahan dari". $n1 ." + ". $n2 ." = "
+// .$hasil;
+//  }
 
-class Latihan1 extends CI_Controller 
-{ 
-    public function index() 
-    { 
-        ?>
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Selamat Datang!</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f4;
-                    text-align: center;
-                }
-                .container {
-                    margin-top: 100px;
-                }
-                h1 {
-                    color: #333;
-                }
-                img {
-                    width: 200px;
-                    border-radius: 50%;
-                    margin-bottom: 20px;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <img src="gambar.jpg" alt="Selamat Datang">
-                <h1>Saya THEO.. selamat belajar Web Programming</h1>
-            </div>
-        </body>
-        </html>
-        <?php
-    } 
+public function penjumlahan($n1, $n2)
+ {
+ $this->load->model('ModelLatihan1');
+ $data['nilai1'] = $n1;
+ $data['nilai2'] = $n2;
+ $data['hasil'] = $this->ModelLatihan1->jumlah($n1, $n2);
+ $this->load->view('view1', $data);
+ }
 }
-?>
